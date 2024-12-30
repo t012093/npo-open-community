@@ -22,9 +22,9 @@
 まず、このリポジトリをクローンします。
 
 ```bash
-git clone [https://github.com/t012093/document-ui.git](https://github.com/t012093/document-ui.git) <your-project-docs>
+git clone https://github.com/t012093/document-ui.git <your-project-docs>
 cd <your-project-docs>
-<your-project-docs> は、ドキュメントを管理する新しいリポジトリ名に変更してください (例: lifegenius-docs)。
+<your-project-docs> は、ドキュメントを管理する新しいリポジトリ名に変更してください (例: プロジェクト名-docs)。
 
 2. 依存関係をインストールする
 
@@ -42,7 +42,7 @@ YAML
 site_name: 'Your Project Name' # プロジェクト名
 site_description: 'Your Project Description' # プロジェクトの説明
 site_author: 'Your Name' # 作者名
-repo_url: '[無効な URL を削除しました]' # プロジェクトのリポジトリ URL
+repo_url: 'プロジェクトのリポジトリ URL' # プロジェクトのリポジトリ URL
 # repo_name: 'your-username/your-project'  #  GitHub リポジトリ名が必要な場合のみコメントアウトを解除
 
 nav:
