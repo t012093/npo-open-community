@@ -10,4 +10,37 @@ nav:
     - Lifegenius: lifegenius.md
 
 theme:
-    name: material # テーマ名
+    # 使用するテーマ名
+    name: 'material'
+    # 標準言語。日本語の場合は'ja'（jpではない）
+    language: 'ja'
+    # サイトヘッダー画像
+    logo: 'images/logo.svg'
+    # サイトアイコン画像
+    favicon: 'assets/images/favicon.ico'
+    # 使用可能色は定義された21色
+    #    red, pink, purple, deep purple, indigo, blue, light blue, cyan,
+    #    teal,  green, light green, lime, yellow, amber, orange,
+    #    deep orange,   brown, grey, blue grey, white
+    palette:
+        # ヘッダーの色。標準は'indigo'
+        primary: 'indigo'
+        # ハイライト文字の色。標準は'indigo'。
+        accent: 'indigo'
+    # フォント。'font: false'にするとGoogleフォントを使用しなくなる
+    font:
+        text: 'Roboto'
+        code: 'Roboto Mono'
+
+extra:
+    # Materialデザインのアイコン拡張
+    logo:
+        # 利用可能なアイコンは以下を参照
+        # https://material.io/resources/icons/?icon=description&style=baseline
+        icon: 'developer_board'
+    # ウェブアプリマニフェストを有効化
+    # Web App Manifestについては他サイトを参照
+    manifest: 'manifest.webmanifest'
+
+plugins:
+  - mkdocs-mermaid2
