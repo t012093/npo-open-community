@@ -9,7 +9,7 @@
 1.  このリポジトリをクローンします。
 
     ```bash
-    git clone [無効な URL を削除しました]
+    git clone https://github.com/t012093/document-ui.git
     ```
 
 2.  `mkdocs.yml` を編集して、プロジェクトに合わせて設定を変更します。
