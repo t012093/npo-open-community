@@ -7,6 +7,7 @@ nav:
     - ホーム: index.md # ホームページ
     - インストール方法: installation.md # インストール方法
     - 使い方: usage.md # 使い方
+    - Lifegenius: Lifegenius/README.md
 
 theme:
     name: material # テーマ名
