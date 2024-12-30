@@ -47,6 +47,7 @@ plugins:
       indexing: 'full'
   # mermaidの表示設定
   # - mkdocs-mermaid2
+  - awesome-pages
 # [拡張機能]
 markdown_extensions:
     # 目次
@@ -122,20 +123,17 @@ extra:
   # フッターのソーシャルリンク
   social:
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/ryohei_takasugi
+      link: https://twitter.com/sample
       name: ryohei_takasugi on Twitter
     - icon: fontawesome/brands/github
-      link: https://github.com/ryohei-takasugi
-      name: ryohei_takasugi on Github
+      link: https://github.com/t012093
+      name: t012093 on Github
 # [フッター] 著作権表示
-copyright: Copyright &copy; 2020 - 2022 ryohei_takasugi
-# [ページナビゲーション]
+copyright: Copyright &copy; 2024 naoya kusunoki
+
 nav:
-  - はじめに: index.md
-  - インストール: installation.md
-  - Lifegenius: lifegenius.md
-  - 使い方: usage.md
+
 # ローカル環境で表示する場合はfalse、Webサーバー経由ならTrue
 use_directory_urls: false
 # 公開するページのPort番号を指定
-dev_addr: '0.0.0.0:18000'
+dev_addr: '0.0.0.0:8000'

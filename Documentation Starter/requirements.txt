@@ -1,1 +1,4 @@
 mkdocs-material>=9.5.3
+PyYAML>=5.1
+pymdown-extensions==10.13
+mkdocs-mermaid2-plugin
