@@ -1,0 +1,12 @@
+site_name: ドキュメントUIテンプレート # プロジェクト名
+site_description: MkDocsを使用したドキュメント作成のテンプレート # プロジェクトの簡単な説明
+site_author: Your Name # 開発者名
+repo_url: https://github.com/your-username/your-repo # リポジトリURL
+
+nav:
+    - ホーム: index.md # ホームページ
+    - インストール方法: installation.md # インストール方法
+    - 使い方: usage.md # 使い方
+
+theme:
+    name: material # テーマ名
