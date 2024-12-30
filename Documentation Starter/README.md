@@ -50,6 +50,8 @@
 
 *   `THEME_COLOR`: ドキュメントのテーマカラーを設定します。例: `#007bff`
 *   `SITE_LOGO`: ドキュメントのロゴを設定します。例: `images/logo.png`
+*   `SITE_URL`: ドキュメントのURLを設定します。例: `https://example.com`
+*   `GITHUB_REPOSITORY`: ドキュメントのリポジトリを設定します。例: `t012093/document-ui`
 
 ## ディレクトリ構成
 
