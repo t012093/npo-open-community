@@ -1,46 +1,141 @@
-site_name: Lifegenius # プロジェクト名
-site_description: 遺伝子とAIが導く、パーソナライズド・ライフデザイン # プロジェクトの簡単な説明
-site_author: naoya kusunoki # 開発者名
-repo_url: https://github.com/weuse1324/Lifegenius-website # リポジトリURL
-
-nav:
-    - ホーム: index.md # ホームページ
-    - インストール方法: installation.md # インストール方法
-    - 使い方: usage.md # 使い方
-    - Lifegenius: lifegenius.md
-
+site_name: My Docs
+# [テーマ]
 theme:
-    # 使用するテーマ名
-    name: 'material'
-    # 標準言語。日本語の場合は'ja'（jpではない）
-    language: 'ja'
-    # サイトヘッダー画像
-    logo: 'images/logo.svg'
-    # サイトアイコン画像
-    favicon: 'assets/images/favicon.ico'
-    # 使用可能色は定義された21色
-    #    red, pink, purple, deep purple, indigo, blue, light blue, cyan,
-    #    teal,  green, light green, lime, yellow, amber, orange,
-    #    deep orange,   brown, grey, blue grey, white
-    palette:
-        # ヘッダーの色。標準は'indigo'
-        primary: 'indigo'
-        # ハイライト文字の色。標準は'indigo'。
-        accent: 'indigo'
-    # フォント。'font: false'にするとGoogleフォントを使用しなくなる
-    font:
-        text: 'Roboto'
-        code: 'Roboto Mono'
-
-extra:
-    # Materialデザインのアイコン拡張
-    logo:
-        # 利用可能なアイコンは以下を参照
-        # https://material.io/resources/icons/?icon=description&style=baseline
-        icon: 'developer_board'
-    # ウェブアプリマニフェストを有効化
-    # Web App Manifestについては他サイトを参照
-    manifest: 'manifest.webmanifest'
-
+  name: material
+  # ロゴ
+  logo: assets/img/icon/icon.svg
+  # サイトの言語
+  language: ja
+  font:
+    # 通常のフォント
+    text: Roboto
+    # codeの等幅フォント設定
+    code: Roboto Mono
+  features:
+    # ページナビゲーションを折りたたみ可能なリンクで左側に配置します。
+    - navigation.expand
+    # トップへ戻るボタン
+    - navigation.top
+    # スクロールしたときヘッダーを自動的に非表示にする
+    - header.autohide
+    # 検索の候補リスト表示を表示する
+    - search.suggest
+    # 検索で一致した結果をハイライトする
+    - search.highlight
+    # コンテンツタブ表示を有効にする
+    - content.tabs.link
+  # ダークモードスイッチ
+  palette:
+    - media: "(prefers-color-scheme: light)" 
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)" 
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+# [プラグイン]
 plugins:
-  - mkdocs-mermaid2
+  # 検索機能
+  - search:
+      lang: ja
+      # インデックス対象の条件
+      separator: '[\s\-\.]'
+      # 各ページのタイトル、セクション見出し、および全文にインデックスを付けます。
+      indexing: 'full'
+  # mermaidの表示設定
+  # - mkdocs-mermaid2
+# [拡張機能]
+markdown_extensions:
+    # 目次
+    - toc:
+        # 自動生成を有効にする
+        permalink: true
+        # 目次の上に表示する文言
+        title: 見出し
+        # 見出しにする深さ
+        toc_depth: 3
+    # コードハイライトの設定（デフォルトのcodehiliteを使わずに拡張機能を使用）
+    - pymdownx.highlight:
+        # (auto_titleなどの他の機能を有効にするためtrue)
+        use_pygments: true
+        # タイトルが設定されていないと自動的に言語名を表示する
+        auto_title: true
+        # 行番号を表示する
+        linenums: true
+        # 行を選択できアンカーリンクを生成可能にする
+        anchor_linenums: true
+    # コードハイライトの設定(インラインブロック版)
+    - pymdownx.inlinehilite
+    # アラート修飾(Note修飾)を有効化
+    - admonition
+    # コンテンツの折りたたみを有効化
+    - pymdownx.details
+    # 打ち消し線の追加
+    - pymdownx.tilde
+    # 下付き文字と上付き文字の追加（tilde拡張も必要）
+    - pymdownx.caret
+    # テキストの強調表示が可能になる（tilde,caret拡張も必要）
+    - pymdownx.mark
+    # ドキュメント内の追加、削除、または更新されたセクションを強調表示
+    - pymdownx.critic
+    # キーボードアイコンの追加
+    - pymdownx.keys
+    # 略語
+    - abbr
+    # 参照
+    - attr_list
+    # HTML内にMarkdownを記述できる
+    - md_in_html
+    # 注釈の追加
+    - footnotes
+    # 定義リスト
+    - def_list
+    # タスクのチェックリストを追加
+    - pymdownx.tasklist:
+        custom_checkbox: true
+    # グリッド表示の有効化
+    - tables
+    # 任意のファイルのコンテンツを他のドキュメントやソースファイルを含むドキュメントに埋め込む機能
+    - pymdownx.snippets
+    # コンテンツタブ表示の有効化
+    - pymdownx.tabbed:
+        alternate_style: true 
+    # mermaidの表示設定
+    - pymdownx.superfences:
+        custom_fences:
+            - name: mermaid
+              class: mermaid
+              format: !!python/name:pymdownx.superfences.fence_code_format
+# [カスタムCSS]
+extra_css:
+  - assets/css/extra.css
+# [カスタムJS]
+extra_javascript:
+  - assets/js/extra.js
+# [mkdocsの拡張]
+extra:
+  # このサイトのバージョン
+  version: 1.0
+  # フッターのソーシャルリンク
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/ryohei_takasugi
+      name: ryohei_takasugi on Twitter
+    - icon: fontawesome/brands/github
+      link: https://github.com/ryohei-takasugi
+      name: ryohei_takasugi on Github
+# [フッター] 著作権表示
+copyright: Copyright &copy; 2020 - 2022 ryohei_takasugi
+# [ページナビゲーション]
+nav:
+  - はじめに: index.md
+  - インストール: installation.md
+  - Lifegenius: lifegenius.md
+  - 使い方: usage.md
+# ローカル環境で表示する場合はfalse、Webサーバー経由ならTrue
+use_directory_urls: false
+# 公開するページのPort番号を指定
+dev_addr: '0.0.0.0:18000'
