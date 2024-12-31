@@ -1,0 +1,218 @@
+/* Mermaid diagram sizing */
+.mermaid {
+  zoom: 0.5;
+}
+
+/* Enhanced Typography */
+.md-typeset {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.md-typeset h1 {
+  font-weight: 600;
+  color: var(--md-primary-fg-color);
+  margin-bottom: 2rem;
+}
+
+.md-typeset h2 {
+  font-weight: 500;
+  color: var(--md-primary-fg-color--light);
+  border-bottom: 2px solid var(--md-primary-fg-color--light);
+  padding-bottom: 0.5rem;
+}
+
+/* Content Readability */
+.md-content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.md-content article {
+  background-color: var(--md-default-bg-color);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Interactive Elements */
+.md-typeset a {
+  color: var(--md-primary-fg-color);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.md-typeset a:hover {
+  border-bottom-color: var(--md-primary-fg-color);
+}
+
+/* Code Blocks */
+.md-typeset pre {
+  background-color: var(--md-code-bg-color);
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.md-typeset code {
+  background-color: var(--md-code-bg-color);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+/* Tables */
+.md-typeset table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1rem 0;
+}
+
+.md-typeset table th {
+  background-color: var(--md-primary-fg-color--light);
+  color: var(--md-primary-bg-color);
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+}
+
+.md-typeset table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+/* Admonitions (Note, Warning, etc.) */
+.md-typeset .admonition {
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.md-typeset .admonition-title {
+  padding: 0.8rem 1rem;
+  font-weight: 500;
+}
+
+/* Navigation */
+.md-nav__link {
+  padding: 0.4rem 0;
+  transition: color 0.2s ease-in-out;
+}
+
+.md-nav__link:hover {
+  color: var(--md-primary-fg-color);
+}
+
+.md-nav__item--active > .md-nav__link {
+  color: var(--md-primary-fg-color);
+  font-weight: 500;
+}
+
+/* Mobile Optimization */
+@media screen and (max-width: 76.1875em) {
+  .md-nav--primary .md-nav__title {
+    background-color: var(--md-primary-fg-color);
+    color: var(--md-primary-bg-color);
+  }
+
+  .md-content {
+    padding: 0.5rem;
+  }
+
+  .md-content article {
+    padding: 1rem;
+  }
+}
+
+/* Dark Mode Enhancements */
+[data-md-color-scheme="slate"] {
+  --md-code-bg-color: rgba(255, 255, 255, 0.05);
+  --md-default-fg-color--light: rgba(255, 255, 255, 0.7);
+  --md-default-fg-color--lighter: rgba(255, 255, 255, 0.3);
+  --md-default-fg-color--lightest: rgba(255, 255, 255, 0.12);
+}
+
+/* Accessibility Improvements */
+:focus {
+  outline: 2px solid var(--md-primary-fg-color);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+/* Task Lists */
+.md-typeset [type="checkbox"]:checked + .task-list-indicator::before {
+  background-color: var(--md-primary-fg-color);
+  border-color: var(--md-primary-fg-color);
+}
+
+/* Search Results */
+.md-search-result__item {
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.md-search-result__link:hover {
+  background-color: var(--md-default-fg-color--lightest);
+}
+
+/* Progress Indicators */
+.progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: 600;
+  width: 100%;
+  margin: 0;
+  line-height: 1.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 1.2rem;
+  float: left;
+  background-color: var(--md-primary-fg-color);
+}
+
+.progress {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+  height: 1.2rem;
+  background-color: var(--md-default-fg-color--lightest);
+  position: relative;
+  border-radius: 4px;
+}
+
+/* Tabs */
+.md-tabs__link {
+  opacity: 0.7;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  opacity: 1;
+}
+
+/* Footer */
+.md-footer-nav {
+  background-color: var(--md-primary-fg-color--dark);
+}
+
+.md-footer-nav__link {
+  padding: 1rem 0;
+}
+
+.md-footer-nav__button {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.md-footer-nav__button:hover {
+  opacity: 0.8;
+}

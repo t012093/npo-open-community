@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>学習プラットフォーム</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M12,2 L2,6 L12,10 L22,6 L12,2 Z M2,16 L12,20 L22,16 M2,11 L12,15 L22,11" stroke="currentColor" stroke-width="2"/>
+    </g>
+</svg>

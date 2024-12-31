@@ -1,0 +1,132 @@
+site_name: My Docs
+# [テーマ]
+theme:
+  name: material
+  # ロゴ
+  logo: assets/img/icon/icon.svg
+  # サイトの言語
+  language: ja
+  font:
+    # 通常のフォント
+    text: Roboto
+    # codeの等幅フォント設定
+    code: Roboto Mono
+  features:
+    # ページナビゲーションを折りたたみ可能なリンクで左側に配置します。
+    - navigation.expand
+    # トップへ戻るボタン
+    - navigation.top
+    # スクロールしたときヘッダーを自動的に非表示にする
+    - header.autohide
+    # 検索の候補リスト表示を表示する
+    - search.suggest
+    # 検索で一致した結果をハイライトする
+    - search.highlight
+    # コンテンツタブ表示を有効にする
+    - content.tabs.link
+  # ダークモードスイッチ
+  palette:
+    - media: "(prefers-color-scheme: light)" 
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)" 
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+# [プラグイン]
+plugins:
+  # 検索機能
+  - search:
+      lang: ja
+      # インデックス対象の条件
+      separator: '[\s\-\.]'
+      # 各ページのタイトル、セクション見出し、および全文にインデックスを付けます。
+      indexing: 'full'
+  # mermaidの表示設定
+  # mkdocs-mermaid2-plugin
+  - awesome-pages
+# [拡張機能]
+markdown_extensions:
+    # 目次
+    - toc:
+        # 自動生成を有効にする
+        permalink: true
+        # 目次の上に表示する文言
+        title: 見出し
+        # 見出しにする深さ
+        toc_depth: 3
+    # コードハイライトの設定（デフォルトのcodehiliteを使わずに拡張機能を使用）
+    - pymdownx.highlight:
+        # (auto_titleなどの他の機能を有効にするためtrue)
+        use_pygments: true
+        # タイトルが設定されていないと自動的に言語名を表示する
+        auto_title: true
+        # 行番号を表示する
+        linenums: true
+        # 行を選択できアンカーリンクを生成可能にする
+        anchor_linenums: true
+    # コードハイライトの設定(インラインブロック版)
+    - pymdownx.inlinehilite
+    # アラート修飾(Note修飾)を有効化
+    - admonition
+    # コンテンツの折りたたみを有効化
+    - pymdownx.details
+    # 打ち消し線の追加
+    - pymdownx.tilde
+    # 下付き文字と上付き文字の追加（tilde拡張も必要）
+    - pymdownx.caret
+    # テキストの強調表示が可能になる（tilde,caret拡張も必要）
+    - pymdownx.mark
+    # ドキュメント内の追加、削除、または更新されたセクションを強調表示
+    - pymdownx.critic
+    # キーボードアイコンの追加
+    - pymdownx.keys
+    # 略語
+    - abbr
+    # 参照
+    - attr_list
+    # HTML内にMarkdownを記述できる
+    - md_in_html
+    # mermaidの表示設定
+    - pymdownx.superfences:
+        custom_fences:
+            - name: mermaid
+              class: mermaid
+              format: !!python/name:pymdownx.superfences.fence_code_format
+# [カスタムCSS]
+extra_css:
+  - assets/css/extra.css
+# [カスタムJS]
+extra_javascript:
+  - assets/js/extra.js
+# [mkdocsの拡張]
+extra:
+  # このサイトのバージョン
+  version: 1.0
+  # フッターのソーシャルリンク
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/sample
+      name: ryohei_takasugi on Twitter
+    - icon: fontawesome/brands/github
+      link: https://github.com/t012093
+      name: t012093 on Github
+# [フッター] 著作権表示
+copyright: Copyright &copy; 2024 naoya kusunoki
+
+nav:
+  - パーソナライズ学習プラットフォーム構築プロジェクト: 'パーソナライズ学習プラットフォーム構築プロジェクト.md'
+  - プロジェクトについて: 'プロジェクトについて.md'
+  - 技術スタック: '技術スタック.md'
+  - プラットフォームの詳細: 'プラットフォームの詳細.md'
+  - ユーザーフロー: 'ユーザーフロー.md'
+  - 開発計画: '開発計画.md'
+  - その他: 'その他.md'
+
+# ローカル環境で表示する場合はfalse、Webサーバー経由ならTrue
+use_directory_urls: false
+# 公開するページのPort番号を指定
+dev_addr: '0.0.0.0:8000'
