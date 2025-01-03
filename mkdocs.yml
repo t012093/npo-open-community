@@ -118,13 +118,20 @@ extra:
 copyright: Copyright &copy; 2024 naoya kusunoki
 
 nav:
-  - パーソナライズ学習プラットフォーム構築プロジェクト: 'パーソナライズ学習プラットフォーム構築プロジェクト.md'
-  - プロジェクトについて: 'プロジェクトについて.md'
-  - 技術スタック: '技術スタック.md'
-  - プラットフォームの詳細: 'プラットフォームの詳細.md'
-  - ユーザーフロー: 'ユーザーフロー.md'
-  - 開発計画: '開発計画.md'
-  - その他: 'その他.md'
+  - Home: index.md
+  - Vision: vision.md
+  - Community:
+    - Community: community.md
+    - Ecosystem: community_ecosystem.md
+    - Activities: community_activities.md
+    - Collaboration: collaboration.md
+    - Participation: participation.md
+    - Contribution Guidelines: contribution_guidelines.md
+    - Communication: communication.md
+    - Governance: governance.md
+  - Projects: projects.md
+  - Technical Information: technical_information.md
+  - Project Integration: project_integration.md
 
 # ローカル環境で表示する場合はfalse、Webサーバー経由ならTrue
 use_directory_urls: false
