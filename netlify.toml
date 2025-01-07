@@ -1,10 +1,9 @@
 [build]
-  command = "pip install -r requirements.txt && mkdocs build"
+  command = "python -m pip install --upgrade pip && pip install -r requirements.txt && mkdocs build"
   publish = "site"
 
 [build.environment]
   PYTHON_VERSION = "3.9"
-  PYTHON_RUNTIME = "3.9"
 
 [[redirects]]
   from = "/*"
