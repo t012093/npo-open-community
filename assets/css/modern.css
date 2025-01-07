@@ -1,0 +1,232 @@
+/* モダンなデザインのためのCSS */
+:root {
+    --primary-color: #1a73e8;
+    --secondary-color: #34a853;
+    --accent-color: #ea4335;
+    --text-primary: #202124;
+    --text-secondary: #5f6368;
+    --background-light: #ffffff;
+    --background-gray: #f8f9fa;
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+/* 基本タイポグラフィ */
+.md-typeset {
+    font-feature-settings: "palt";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.8;
+    color: var(--text-primary);
+}
+
+/* ヘッダースタイル */
+.md-typeset h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    border-bottom: 4px solid var(--primary-color);
+    padding-bottom: 0.5em;
+    margin-bottom: 1.5em;
+    letter-spacing: -0.02em;
+}
+
+.md-typeset h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 2em;
+    padding-left: 1em;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.md-typeset h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 1.5em;
+}
+
+/* リストスタイル */
+.md-typeset ul {
+    list-style: none;
+    padding-left: 1.5em;
+}
+
+.md-typeset ul > li {
+    position: relative;
+    margin-bottom: 0.8em;
+    padding-left: 1.5em;
+}
+
+.md-typeset ul > li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 6px;
+    height: 6px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+
+/* 番号付きリスト */
+.md-typeset ol {
+    counter-reset: item;
+    list-style: none;
+    padding-left: 0;
+}
+
+.md-typeset ol > li {
+    position: relative;
+    padding: 1.2em 1.5em 1.2em 4em;
+    margin-bottom: 1em;
+    background: var(--background-gray);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.md-typeset ol > li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.md-typeset ol > li::before {
+    counter-increment: item;
+    content: counter(item);
+    position: absolute;
+    left: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2em;
+    height: 2em;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* テーブルスタイル */
+.md-typeset table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.md-typeset table th {
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    padding: 1em;
+    text-align: left;
+}
+
+.md-typeset table td {
+    padding: 1em;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.md-typeset table tr:hover td {
+    background-color: var(--background-gray);
+}
+
+/* コードブロック */
+.md-typeset pre {
+    background: #2d333b !important;
+    border-radius: var(--border-radius);
+    padding: 1em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.md-typeset code {
+    background: rgba(0,0,0,0.05);
+    color: var(--accent-color);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+}
+
+/* 引用 */
+.md-typeset blockquote {
+    border-left: 4px solid var(--secondary-color);
+    background-color: var(--background-gray);
+    padding: 1.2em;
+    margin: 1.5em 0;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+/* アラート */
+.md-typeset .admonition {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.md-typeset .admonition:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ナビゲーション */
+.md-nav__item {
+    margin: 0.5em 0;
+}
+
+.md-nav__link {
+    transition: var(--transition);
+    padding: 0.5em;
+    border-radius: 4px;
+}
+
+.md-nav__link:hover {
+    background-color: var(--background-gray);
+    color: var(--primary-color);
+}
+
+/* モバイル対応 */
+@media screen and (max-width: 768px) {
+    .md-typeset h1 {
+        font-size: 2rem;
+    }
+
+    .md-typeset h2 {
+        font-size: 1.5rem;
+    }
+
+    .md-typeset h3 {
+        font-size: 1.2rem;
+    }
+
+    .md-typeset ol > li {
+        padding: 1em 1em 1em 3.5em;
+    }
+
+    .md-typeset table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* アクセシビリティ改善 */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* ダークモード対応 */
+[data-md-color-scheme="slate"] {
+    --text-primary: #ffffff;
+    --text-secondary: #9aa0a6;
+    --background-light: #202124;
+    --background-gray: #303134;
+}

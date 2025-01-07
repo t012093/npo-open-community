@@ -1,0 +1,46 @@
+/* カードグリッドのスタイル調整 */
+.grid.cards {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.grid.cards > * {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.grid.cards > *:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* アイコンのスタイル調整 */
+.lg.middle {
+  font-size: 2rem;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+/* グラフのスタイル調整 */
+.mermaid {
+  margin: 1.5rem 0;
+}
+
+/* 見出しのスタイル調整 */
+h3 {
+  margin-top: 2rem;
+  color: var(--md-primary-fg-color);
+}
+
+/* リストのスタイル調整 */
+.grid.cards ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.grid.cards li {
+  margin: 0.25rem 0;
+}

@@ -1,218 +1,156 @@
-/* Mermaid diagram sizing */
-.mermaid {
-  zoom: 0.5;
-}
-
-/* Enhanced Typography */
-.md-typeset {
-  font-size: 1rem;
-  line-height: 1.8;
-}
-
+/* コントリビューションガイドライン用スタイル */
 .md-typeset h1 {
-  font-weight: 600;
-  color: var(--md-primary-fg-color);
-  margin-bottom: 2rem;
+    color: #2c3e50;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 1.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 6px solid #3498db;
 }
 
 .md-typeset h2 {
-  font-weight: 500;
-  color: var(--md-primary-fg-color--light);
-  border-bottom: 2px solid var(--md-primary-fg-color--light);
-  padding-bottom: 0.5rem;
+    color: #34495e;
+    font-size: 1.5em;
+    margin-top: 2em;
+    padding-left: 1em;
+    border-left: 5px solid #3498db;
 }
 
-/* Content Readability */
-.md-content {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 1rem;
+.md-typeset h3 {
+    color: #2980b9;
+    font-size: 1.2em;
+    margin-top: 1.5em;
 }
 
-.md-content article {
-  background-color: var(--md-default-bg-color);
-  border-radius: 8px;
-  padding: 2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+/* 番号付きリストのスタイル */
+.md-typeset ol {
+    counter-reset: custom-counter;
+    list-style: none !important;
+    padding-left: 0 !important;
 }
 
-/* Interactive Elements */
-.md-typeset a {
-  color: var(--md-primary-fg-color);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease-in-out;
+.md-typeset ol > li {
+    position: relative;
+    padding: 1em 1em 1em 4em;
+    margin-bottom: 1em;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.md-typeset a:hover {
-  border-bottom-color: var(--md-primary-fg-color);
+.md-typeset ol > li::before {
+    counter-increment: custom-counter;
+    content: counter(custom-counter);
+    position: absolute;
+    left: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2em;
+    height: 2em;
+    background: #3498db;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
 }
 
-/* Code Blocks */
+/* コードブロックのスタイル */
 .md-typeset pre {
-  background-color: var(--md-code-bg-color);
-  border-radius: 6px;
-  padding: 1rem;
-  margin: 1rem 0;
+    background: #2c3e50 !important;
+    border-radius: 8px !important;
+    margin: 1em 0 !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
 }
 
 .md-typeset code {
-  background-color: var(--md-code-bg-color);
-  padding: 0.2em 0.4em;
-  border-radius: 3px;
-  font-size: 0.9em;
+    background-color: rgba(0,0,0,0.05) !important;
+    color: #e74c3c !important;
+    padding: 0.2em 0.4em !important;
+    border-radius: 3px !important;
 }
 
-/* Tables */
+/* 箇条書きリストのスタイル */
+.md-typeset ul {
+    list-style: none !important;
+    padding-left: 1.5em !important;
+}
+
+.md-typeset ul > li {
+    position: relative;
+    padding-bottom: 0.75em;
+}
+
+.md-typeset ul > li::before {
+    content: "•";
+    color: #3498db;
+    font-weight: bold;
+    position: absolute;
+    left: -1.5em;
+}
+
+/* 重要な情報のスタイル */
+.md-typeset blockquote {
+    border-left: 4px solid #ffc107 !important;
+    background-color: #fff3cd !important;
+    padding: 1em !important;
+    margin: 1em 0 !important;
+}
+
+.md-typeset blockquote p {
+    margin: 0 !important;
+    color: #856404 !important;
+}
+
+/* 強調テキストのスタイル */
+.md-typeset strong {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+/* テーブルのスタイル */
 .md-typeset table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  margin: 1rem 0;
+    border-collapse: collapse;
+    width: 100%;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .md-typeset table th {
-  background-color: var(--md-primary-fg-color--light);
-  color: var(--md-primary-bg-color);
-  font-weight: 500;
-  padding: 0.75rem 1rem;
+    background: #3498db !important;
+    color: white !important;
+    font-weight: bold;
 }
 
-.md-typeset table td {
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+.md-typeset table tr:nth-child(even) {
+    background: #f8f9fa;
 }
 
-/* Admonitions (Note, Warning, etc.) */
+.md-typeset table td,
+.md-typeset table th {
+    padding: 0.75em !important;
+}
+
+/* アラート表示 */
 .md-typeset .admonition {
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-left-width: 4px !important;
 }
 
 .md-typeset .admonition-title {
-  padding: 0.8rem 1rem;
-  font-weight: 500;
+    padding: 0.8em 1em !important;
 }
 
-/* Navigation */
-.md-nav__link {
-  padding: 0.4rem 0;
-  transition: color 0.2s ease-in-out;
-}
-
-.md-nav__link:hover {
-  color: var(--md-primary-fg-color);
-}
-
-.md-nav__item--active > .md-nav__link {
-  color: var(--md-primary-fg-color);
-  font-weight: 500;
-}
-
-/* Mobile Optimization */
-@media screen and (max-width: 76.1875em) {
-  .md-nav--primary .md-nav__title {
-    background-color: var(--md-primary-fg-color);
-    color: var(--md-primary-bg-color);
-  }
-
-  .md-content {
-    padding: 0.5rem;
-  }
-
-  .md-content article {
-    padding: 1rem;
-  }
-}
-
-/* Dark Mode Enhancements */
-[data-md-color-scheme="slate"] {
-  --md-code-bg-color: rgba(255, 255, 255, 0.05);
-  --md-default-fg-color--light: rgba(255, 255, 255, 0.7);
-  --md-default-fg-color--lighter: rgba(255, 255, 255, 0.3);
-  --md-default-fg-color--lightest: rgba(255, 255, 255, 0.12);
-}
-
-/* Accessibility Improvements */
-:focus {
-  outline: 2px solid var(--md-primary-fg-color);
-  outline-offset: 2px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
-  }
-}
-
-/* Task Lists */
-.md-typeset [type="checkbox"]:checked + .task-list-indicator::before {
-  background-color: var(--md-primary-fg-color);
-  border-color: var(--md-primary-fg-color);
-}
-
-/* Search Results */
-.md-search-result__item {
-  padding: 0.5rem;
-  border-radius: 4px;
-}
-
-.md-search-result__link:hover {
-  background-color: var(--md-default-fg-color--lightest);
-}
-
-/* Progress Indicators */
-.progress-label {
-  position: absolute;
-  text-align: center;
-  font-weight: 600;
-  width: 100%;
-  margin: 0;
-  line-height: 1.2rem;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.progress-bar {
-  height: 1.2rem;
-  float: left;
-  background-color: var(--md-primary-fg-color);
-}
-
-.progress {
-  display: block;
-  width: 100%;
-  margin: 0.5rem 0;
-  height: 1.2rem;
-  background-color: var(--md-default-fg-color--lightest);
-  position: relative;
-  border-radius: 4px;
-}
-
-/* Tabs */
-.md-tabs__link {
-  opacity: 0.7;
-  transition: opacity 0.2s ease-in-out;
-}
-
-.md-tabs__link--active,
-.md-tabs__link:hover {
-  opacity: 1;
-}
-
-/* Footer */
-.md-footer-nav {
-  background-color: var(--md-primary-fg-color--dark);
-}
-
-.md-footer-nav__link {
-  padding: 1rem 0;
-}
-
-.md-footer-nav__button {
-  transition: opacity 0.2s ease-in-out;
-}
-
-.md-footer-nav__button:hover {
-  opacity: 0.8;
+/* レスポンシブ対応 */
+@media screen and (max-width: 768px) {
+    .md-typeset ol > li {
+        padding-left: 3em;
+    }
+    
+    .md-typeset ol > li::before {
+        left: 0.5em;
+        width: 1.8em;
+        height: 1.8em;
+    }
 }

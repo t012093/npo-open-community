@@ -2,10 +2,19 @@ site_name: My Docs
 # [テーマ]
 theme:
   name: material
-  # ロゴ
-  logo: assets/img/icon/icon.svg
+  # ロゴ（Material Designのアイコンを使用）
+  logo: material/book-open-page-variant
   # サイトの言語
   language: ja
+  # アイコン設定
+  icon:
+    logo: material/book-open-page-variant
+  # アイコンパック
+  font:
+    text: Roboto
+    code: Roboto Mono
+  icon:
+    repo: fontawesome/brands/github
   font:
     # 通常のフォント
     text: Roboto
@@ -26,15 +35,17 @@ theme:
     - content.tabs.link
   # ダークモードスイッチ
   palette:
-    - media: "(prefers-color-scheme: light)" 
-      scheme: default
+    - scheme: default
+      primary: indigo
+      accent: indigo
       toggle:
-        icon: material/toggle-switch-off-outline
+        icon: material/brightness-7
         name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)" 
-      scheme: slate
+    - scheme: slate
+      primary: indigo
+      accent: indigo
       toggle:
-        icon: material/toggle-switch
+        icon: material/brightness-4
         name: Switch to light mode
 # [プラグイン]
 plugins:
@@ -90,6 +101,10 @@ markdown_extensions:
     - attr_list
     # HTML内にMarkdownを記述できる
     - md_in_html
+    # 絵文字とアイコンのサポート
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
     # mermaidの表示設定
     - pymdownx.superfences:
         custom_fences:
@@ -98,10 +113,10 @@ markdown_extensions:
               format: !!python/name:pymdownx.superfences.fence_code_format
 # [カスタムCSS]
 extra_css:
-  - assets/css/extra.css
+  - docs/assets/css/extra.css
 # [カスタムJS]
-extra_javascript:
-  - assets/js/extra.js
+# extra_javascript:
+#   - assets/js/extra.js
 # [mkdocsの拡張]
 extra:
   # このサイトのバージョン
@@ -118,20 +133,30 @@ extra:
 copyright: Copyright &copy; 2024 naoya kusunoki
 
 nav:
-  - Home: index.md
-  - Vision: vision.md
-  - Community:
-    - Community: community.md
-    - Ecosystem: community_ecosystem.md
-    - Activities: community_activities.md
-    - Collaboration: collaboration.md
-    - Participation: participation.md
-    - Contribution Guidelines: contribution_guidelines.md
-    - Communication: communication.md
-    - Governance: governance.md
-  - Projects: projects.md
-  - Technical Information: technical_information.md
-  - Project Integration: project_integration.md
+  - プロジェクトビジョン: プロジェクトビジョン.md
+  - 議事録:
+    - 2025年1月7日: meeting/2025_01_meeting.md
+  - コミュニティ:
+    - 基本情報:
+      - 概要: community.md
+      - エコシステム: community_ecosystem.md
+      - コラボレーション: collaboration.md
+      - 貢献ガイドライン: contribution_guidelines.md
+    - 参加について:
+      - 参加形態: コミュニティー/参加形態について.md
+      - コミュニティ行動規範: コミュニティー/コミュニティ行動規範詳細資料.md
+    - インセンティブ:
+      - インセンティブ制度: コミュニティー/インセンティブ制度.md
+      - ベーシックインセンティブ: コミュニティー/ベーシックインセンティブ制度.md
+    - コミュニケーション:
+      - Discordチャンネル: コミュニティー/discord_channels.md
+      - AIイベント招待: コミュニティー/aiイベント招待.md
+  - プロジェクト:
+    - AR都市開発:
+      - AR自然豊かな未来都市: projects/AR自然豊かな未来都市.md
+      - AR都市構想プロジェクト: projects/ar_urban_development.md
+    - ライフジーニアス: projects/lifegenius.md
+  
 
 # ローカル環境で表示する場合はfalse、Webサーバー経由ならTrue
 use_directory_urls: false
