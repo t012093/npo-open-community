@@ -1,20 +1,23 @@
 {
   "version": 2,
-  "cleanUrls": true,
-  "trailingSlash": false,
   "buildCommand": "pip install -r requirements.txt && mkdocs build",
   "outputDirectory": "site",
   "installCommand": "pip install -r requirements.txt",
   "builds": [
     {
-      "src": "site/**",
-      "use": "@vercel/static"
+      "src": "mkdocs.yml",
+      "use": "@vercel/python"
     }
   ],
-  "rewrites": [
+  "headers": [
     {
       "source": "/(.*)",
-      "destination": "/site/$1"
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
     }
   ]
 }
