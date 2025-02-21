@@ -1,0 +1,136 @@
+/* イシュー管理のワークフローUI */
+.workflow-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.workflow-section {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+    padding: 20px;
+    border-left: 4px solid #2196f3;
+}
+
+.workflow-section:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+.workflow-title {
+    color: #1a73e8;
+    font-size: 1.5em;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.workflow-point {
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 16px;
+    margin: 12px 0;
+}
+
+.workflow-point h4 {
+    color: #202124;
+    margin: 0 0 12px 0;
+    display: flex;
+    align-items: center;
+}
+
+.workflow-point h4::before {
+    content: "●";
+    color: #1a73e8;
+    margin-right: 8px;
+    font-size: 0.8em;
+}
+
+.workflow-list {
+    list-style: none;
+    padding-left: 24px;
+    margin: 8px 0;
+}
+
+.workflow-list li {
+    position: relative;
+    padding: 4px 0;
+    color: #5f6368;
+}
+
+.workflow-list li::before {
+    content: "•";
+    color: #1a73e8;
+    position: absolute;
+    left: -16px;
+}
+
+/* カード形式のスタイル */
+.workflow-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 12px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.workflow-card-title {
+    font-size: 1.1em;
+    color: #1a73e8;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.workflow-card-title::before {
+    content: "";
+    width: 4px;
+    height: 16px;
+    background: #1a73e8;
+    margin-right: 8px;
+    border-radius: 2px;
+}
+
+/* チェックリストスタイル */
+.workflow-checklist {
+    padding-left: 0;
+    list-style: none;
+}
+
+.workflow-checklist li {
+    padding: 8px 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.workflow-checklist li::before {
+    content: "✓";
+    color: #34a853;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+/* アクセントカラー */
+.accent-blue { border-left-color: #1a73e8; }
+.accent-green { border-left-color: #34a853; }
+.accent-orange { border-left-color: #fa7b17; }
+.accent-red { border-left-color: #ea4335; }
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .workflow-container {
+        padding: 12px;
+    }
+    
+    .workflow-section {
+        padding: 16px;
+    }
+    
+    .workflow-point {
+        padding: 12px;
+    }
+}

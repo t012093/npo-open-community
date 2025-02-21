@@ -2,13 +2,12 @@ site_name: My Docs
 # [テーマ]
 theme:
   name: material
-  # ロゴ（Material Designのアイコンを使用）
-  logo: material/book-open-page-variant
+  # ファビコンの設定
+  favicon: images/image1.png
+  # アイコンの設定
+  logo: images/image1.png
   # サイトの言語
   language: ja
-  # アイコン設定
-  icon:
-    logo: material/book-open-page-variant
   # アイコンパック
   font:
     text: Roboto
@@ -33,6 +32,12 @@ theme:
     - search.highlight
     # コンテンツタブ表示を有効にする
     - content.tabs.link
+    # 前後のページへのナビゲーションを追加
+    - navigation.footer
+    # 前後のページタイトルを表示
+    - navigation.tabs
+    # パンくずリストを表示
+    - navigation.tracking
   # ダークモードスイッチ
   palette:
     - scheme: default
@@ -111,7 +116,7 @@ markdown_extensions:
               format: !!python/name:pymdownx.superfences.fence_code_format
 # [カスタムCSS]
 extra_css:
-  - docs/assets/css/extra.css
+  - assets/css/extra.css
 # [カスタムJS]
 # extra_javascript:
 #   - assets/js/extra.js
@@ -131,54 +136,52 @@ extra:
 copyright: Copyright &copy; 2024 naoya kusunoki
 
 nav:
-  - コミュニティ概要: community_overview.md
-  - Home: index.md
-  - 参加について: participation.md
-  - 提案チェックリスト: proposal_checklist.md
-  - ビジョン: vision.md
-  - 英語: en/index.md
-  - 日本語: ja/index.md
+  - ハッカソン:
+    - 基本情報: hackathon/basic.md
+    - スケジュール: hackathon/hackathon_schedule.md
+    - GitHub Projectsガイド: hackathon/github-projects-guide.md
+    - GitHub Projects実践ガイド: hackathon/github-projects-practical-guide.md
+    - タスク管理入門ガイド: hackathon/task-management-guide-for-beginners.md
+    - Cline紹介: hackathon/cline-introduction.md
   - プロジェクトビジョン: プロジェクトビジョン.md
+  - 保育アプリ:
+    - プロジェクト概要: 保育アプリ/プロジェクト概要.md
+    - 開発スケジュール: 保育アプリ/開発スケジュール.md
+    - プロジェクト体制: 保育アプリ/プロジェクト体制.md
   - 議事録:
     - 2025年1月7日: meeting/2025_01_meeting.md
+    - 2025年1月7日フォローアップ: meeting/2025_01_meeting_follow_up.md
+    - 2025年1月7日フォローアップ(第2版): meeting/2025_01_meeting_follow_up_v2.md
     - 2025年1月16日: meeting/2025_01_16_meeting.md
-    - 2025年1月 議事録フォローアップ: meeting/2025_01_meeting_follow_up.md
+    - 2025年1月16日プロジェクト管理: meeting/2025_01_20_project_management.md
+    - 保育アプリ再評価会議: 会議資料.md
   - コミュニティ:
     - 基本情報:
       - 概要: community.md
-      - NPOについて: npoについて.md
-      - 組織統治: governance.md
       - エコシステム: community_ecosystem.md
       - コラボレーション: collaboration.md
       - 貢献ガイドライン: contribution_guidelines.md
-      - コミュニティー概要資料: コミュニティー/コミュニティー_概要資料.md
     - 参加について:
       - 参加形態: コミュニティー/参加形態について.md
-      - 参加資格: コミュニティー/参加資格.md
       - コミュニティ行動規範: コミュニティー/コミュニティ行動規範詳細資料.md
     - インセンティブ:
       - インセンティブ制度: コミュニティー/インセンティブ制度.md
       - ベーシックインセンティブ: コミュニティー/ベーシックインセンティブ制度.md
-      - インセンティブ制度（ポイント）: コミュニティー/インセンティブ制度_ポイント.md
-      - インセンティブ制度（プロジェクト）: コミュニティー/インセンティブ制度_プロジェクト.md
-    - 活動:
-      - コミュニティ活動: community_activities.md
     - コミュニケーション:
       - Discordチャンネル: コミュニティー/discord_channels.md
       - AIイベント招待: コミュニティー/aiイベント招待.md
-      - AIマッチング: コミュニティー/aiマッチング.md
+      - Zoomミーティング: zoom_meeting_guide.md
+  - 国際助成金: international_grants.md
+  - 要件定義書: 要件定義書.md
+  - NPO給与・報酬ガイド: npo_salary_guide.md
   - プロジェクト:
-    - プロジェクト概要: projects.md
     - AR都市開発:
       - AR自然豊かな未来都市: projects/AR自然豊かな未来都市.md
       - AR都市構想プロジェクト: projects/ar_urban_development.md
-      - ARプラットフォーム戦略: projects/ar_platform_strategy.md
     - ライフジーニアス: projects/lifegenius.md
-    - パーソナルアシスタントAI: projects/personal_assistant_ai.md
-  - 技術情報: technical_information.md
-  
+    - SNSプラン: sns/snsplan.md
 
 # ローカル環境で表示する場合はfalse、Webサーバー経由ならTrue
 use_directory_urls: false
 # 公開するページのPort番号を指定
-dev_addr: '0.0.0.0:8000'
+dev_addr: '0.0.0.0:8001'
